@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html dir="rtl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>تعديل موظف</title>
+    
+    <!-- خط عصري -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+    <!-- أيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #121212;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        h2 {
+            color: #00ffae;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #00ffae44;
+        }
+
+        label {
+            float: right;
+            font-weight: bold;
+        }
+
+        .form-control {
+            background-color: #1e1e1e;
+            border: 1px solid #00ffae;
+            color: #ffffff;
+        }
+
+        .form-control::placeholder {
+            color: #cccccc;
+        }
+
+        .btn-primary {
+            background-color: #00ffae;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #00c995;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/"> نظام الموظفين</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">🏠 الصفحة الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/newaddition">➕ إضافة موظف</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">ℹ️ عن النظام</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div class="container mt-5">
+    <h2 class="text-center"><i class="fas fa-user-edit"></i> تعديل بيانات موظف</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 form-container">
+
+            <form th:action="@{/updateEmployee}" th:object="${emplo}" method="post">
+                <input type="hidden" th:field="*{id}" />
+
+                <div class="form-group text-right">
+                    <label><i class="fas fa-hashtag"></i> الرقم:</label>
+                    <input type="number" th:field="*{employeeNumber}" class="form-control text-right" placeholder="أدخل الرقم الوظيفي" />
+                </div>
+
+                <div class="form-group text-right">
+                    <label><i class="fas fa-phone-alt"></i> رقم الهاتف:</label>
+                    <input type="number" th:field="*{mobile}" class="form-control text-right" placeholder="أدخل رقم الهاتف" />
+                </div>
+
+                <div class="form-group text-right">
+                    <label><i class="fas fa-user"></i> اسم الموظف:</label>
+                    <input type="text" th:field="*{ename}" class="form-control text-right" placeholder="أدخل اسم الموظف" />
+                </div>
+
+                <div class="form-group text-right">
+                    <label><i class="fas fa-dollar-sign"></i> المرتب:</label>
+                    <input type="number" th:field="*{salary}" class="form-control text-right" placeholder="أدخل المرتب" />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-save"></i> تحديث</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 - منظومة الموظفين
+</footer>
+
+</body>
+</html>

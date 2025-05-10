@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>الموظفين</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #000;
+            color: rgb(0, 255, 64);
+            font-family: 'Scheherazade New', serif;
+        }
+
+        .custom-table {
+            background-color: #1e1e1e;
+            color: rgb(128, 255, 255);
+            border: 1px solid #444;
+        }
+
+        .custom-table th {
+            background-color: #2c2c2c;
+            color: rgb(191, 216, 169);
+        }
+
+        .custom-table td {
+            border-color: #555;
+            font-size: 22px; /* تم تكبير الخط داخل الجدول */
+        }
+
+        .custom-table tr:nth-child(even) {
+            background-color: #262626;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: rgb(0, 255, 128);
+        }
+
+        .btn-outline-warning, .btn-outline-danger {
+            font-weight: bold;
+            border-radius: 12px;
+            padding: 4px 10px;
+        }
+
+        /* تأثيرات عند التمرير على الأزرار */
+        .btn:hover {
+            background-color: #28a745 !important;
+            color: white;
+        }
+
+        /* تأثير عند التمرير على الجدول */
+        .custom-table tr:hover {
+            background-color: #333;
+        }
+
+        /* إضافة مسافة بين الأزرار */
+        .btn-group a {
+            margin: 5px;
+        }
+
+        /* تحسين مسافات العنوان */
+        .text-center h2 {
+            margin-top: 40px;
+        }
+    </style>
+
+</head>
+<body class="bg-secondary">
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4" style="color: rgb(128, 255, 0); font-family: 'Amiri', serif; font-weight: bold;">
+        منظومة بيانات الموظفين
+    </h2>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" dir="rtl">
+        <div class="container d-flex justify-content-between w-100">
+            <!-- وسط الصفحة: العنوان المزخرف -->
+            <div class="mx-auto text-center">
+                <span style="font-family: 'Amiri', serif; font-size: 22px; color: #00ff66; font-weight: bold;">
+                    نظام عرض الموظفين
+                </span>
+            </div>
+            <!-- يمين الصفحة: الأزرار -->
+            <div class="d-flex align-items-center">
+                <form th:action="@{/search}" th:object="${emplo}" method="post" class="form-inline my-2 my-lg-0">
+                    <input class="form-control ml-2" type="text" th:field="*{employeeNumber}" placeholder="رقم الموظف">
+                    <input class="form-control ml-2" type="text" th:field="*{ename}" placeholder="الاسم">
+                    <button class="btn btn-outline-success ml-2" type="submit">بحث</button>
+                </form>
+                <a href="/newaddition" class="btn btn-success ml-3">➕ إضافة موظف</a>
+                <a href="/" class="btn btn-success ml-3">📄 عرض الكل</a>
+            </div>
+        </div>
+    </nav>
+
+<br><br><br>
+    <table class="table custom-table text-center">
+        <thead>
+            <tr>
+                <th>رقم الموظف</th>
+                <th>الاسم</th>
+                <th>رقم الهاتف</th>
+                <th>المرتب</th>
+                <th>الخيارات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="emp : ${listemployee}">
+                <td style="color: rgb(128, 255, 0);" th:text="${emp.employeeNumber}">ID</td>
+                <td style="color: rgb(192, 192, 192);" th:text="${emp.ename}">Name</td>
+                <td th:text="${emp.mobile}">Mobile</td>
+                <td th:text="${emp.salary}">Salary</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a th:href="@{'/edit/' + ${emp.id}}" class="btn btn-outline-success btn-sm">✏️ تعديل</a>
+                        <a th:href="@{'/delete/' + ${emp.id}}" class="btn btn-outline-danger btn-sm" onclick="return confirm('هل أنت متأكد من الحذف؟')">🗑️ حذف</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

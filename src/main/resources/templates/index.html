@@ -87,9 +87,11 @@
             <!-- يمين الصفحة: الأزرار -->
             <div class="d-flex align-items-center">
                 <form th:action="@{/search}" th:object="${emplo}" method="post" class="form-inline my-2 my-lg-0">
-                    <input class="form-control ml-2" type="text" th:field="*{employeeNumber}" placeholder="رقم الموظف">
+                    <input class="form-control ml-2" type="text" th:field="*{employeeNumber}" placeholder="رقم الموظف">        
                     <input class="form-control ml-2" type="text" th:field="*{ename}" placeholder="الاسم">
+                    <br>              <center>
                     <button class="btn btn-outline-success ml-2" type="submit">بحث</button>
+              </center>
                 </form>
                 <a href="/newaddition" class="btn btn-success ml-3">➕ إضافة موظف</a>
                 <a href="/" class="btn btn-success ml-3">📄 عرض الكل</a>

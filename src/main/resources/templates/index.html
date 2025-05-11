@@ -147,10 +147,10 @@
         </thead>
         <tbody>
             <tr th:each="emp : ${listemployee}">
-                <td style="color: rgb(128, 255, 0);" th:text="${emp.employeeNumber}">ID</td>
+                <td style="color: rgb(255, 255, 255);" th:text="${emp.employeeNumber}">ID</td>
                 <td style="color: rgb(192, 192, 192);" th:text="${emp.ename}">Name</td>
-                <td th:text="${emp.mobile}">Mobile</td>
-                <td th:text="${emp.salary}">Salary</td>
+                <td style="color: rgb(192, 192, 192);"th:text="${emp.mobile}">Mobile</td>
+                <td style="color: rgb(128, 255, 0);"th:text="${emp.salary}">Salary</td>
                 <td>
                     <div class="btn-group" role="group">
                         <a th:href="@{'/edit/' + ${emp.id}}" class="btn btn-outline-success btn-sm">✏️ تعديل</a>

@@ -1,34 +1,105 @@
-<!-- templates/about.html -->
 <!DOCTYPE html>
-<html dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>عن النظام</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>حول النظام</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: #00ff99;
+      font-family: 'Amiri', serif;
+    }
+
+    .container-box {
+      max-width: 800px;
+      margin: 80px auto;
+      background-color: #1c1c1c;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 255, 128, 0.2);
+      text-align: right;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #00ffaa;
+      border-bottom: 1px solid #00ffaa;
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      font-size: 19px;
+      padding-right: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      text-align: right;
+      margin-top: 40px;
+      font-size: 18px;
+      color: #cccccc;
+    }
+
+    .footer span {
+      color: #00ff66;
+      font-weight: bold;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0, 255, 128, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 22px;
+      color: #00ff88 !important;
+      font-family: 'Amiri', serif;
+    }
+  </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <!-- شريط التنقل -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/">نظام الموظفين</a>
+      <a class="navbar-brand" href="/">نظام الموظفين</a>
     </div>
-</nav>
+  </nav>
 
-<div class="container mt-5 text-center text-light">
-    <h2>عن النظام</h2>
-    <p>هذا النظام تم تطويره لإدارة بيانات الموظفين بطريقة بسيطة وحديثة. يتيح لك إضافة وتعديل وحذف الموظفين والبحث عنهم بسهولة ومرونة.</p>
+  <!-- محتوى الصفحة -->
+  <div class="container-box">
+    <h1>نظام إدارة بيانات الموظفين</h1>
     
-    <div class="mt-4">
-        <h5>مميزات النظام:</h5>
-        <ul>
-            <li>إضافة الموظفين بسهولة</li>
-            <li>تعديل البيانات بسرعة</li>
-            <li>حذف الموظفين وتنظيم البيانات</li>
-            <li>بحث دقيق ومرن عن الموظفين</li>
-        </ul>
-    </div>
+    <p>
+      هذا النظام تم تطويره لإدارة بيانات الموظفين بطريقة بسيطة وحديثة. يتيح لك إضافة وتعديل وحذف الموظفين والبحث عنهم بسهولة ومرونة.
+    </p>
+    
+    <h3>مميزات النظام:</h3>
+    <ul>
+      <li>➕ إضافة الموظفين بسهولة</li>
+      <li>✏️ تعديل البيانات بسرعة</li>
+      <li>🗑️ حذف الموظفين وتنظيم البيانات</li>
+      <li>🔍 بحث دقيق ومرن عن الموظفين</li>
+    </ul>
 
-    <p class="mt-4">إعداد المهندس محمد الأوجلي</p>
-</div>
+    <div class="footer">
+      إعداد: <span>المهندس محمد الأوجلي</span>
+    </div>
+  </div>
 
 </body>
 </html>

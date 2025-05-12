@@ -26,7 +26,7 @@
         }
 
         h2 {
-            color: #00ffae;
+            color: rgb(53, 210, 45);
             margin-bottom: 30px;
             font-weight: bold;
         }
@@ -46,7 +46,7 @@
 
         .form-control {
             background-color: #1e1e1e;
-            border: 1px solid #00ffae;
+            border: 1px solid rgb(0, 128, 128);
             color: #ffffff;
         }
 
@@ -54,7 +54,7 @@
             color: #cccccc;
         }
 
-       .btn-primary {
+        .btn-primary {
             background-color: rgb(0, 0, 0);
             border: none;
         }
@@ -117,21 +117,22 @@
                     <input type="number" th:field="*{employeeNumber}" class="form-control text-right" placeholder="أدخل الرقم الوظيفي" />
                 </div>
 
+<br>
                 <div class="form-group text-right">
                     <label><i class="fas fa-phone-alt"></i> رقم الهاتف:</label>
                     <input type="number" th:field="*{mobile}" class="form-control text-right" placeholder="أدخل رقم الهاتف" />
                 </div>
-
+<br>
                 <div class="form-group text-right">
                     <label><i class="fas fa-user"></i> اسم الموظف:</label>
                     <input type="text" th:field="*{ename}" class="form-control text-right" placeholder="أدخل اسم الموظف" />
                 </div>
-
+<br>
                 <div class="form-group text-right">
                     <label><i class="fas fa-dollar-sign"></i> المرتب:</label>
                     <input type="number" th:field="*{salary}" class="form-control text-right" placeholder="أدخل المرتب" />
                 </div>
-
+<br>
                 <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-save"></i> تحديث</button>
             </form>
 
